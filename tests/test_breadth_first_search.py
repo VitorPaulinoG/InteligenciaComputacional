@@ -1,7 +1,7 @@
 import unittest
-from depth_first_search import depth_first_search
+from breadth_first_search import breadth_first_search
 
-class TestDepthFirstSearch(unittest.TestCase):
+class TestBreadthFirstSearch(unittest.TestCase):
     def setUp(self):
         self.adjacencias = [
         #    A  B  C  D  E  F  G  H  I  J
@@ -16,10 +16,9 @@ class TestDepthFirstSearch(unittest.TestCase):
             [0, 0, 0, 0, 0, 0, 1, 0, 0, 1],  # I
             [0, 0, 0, 0, 0, 0, 1, 0, 1, 0],  # J
         ]
-
+        
     def test_encontrar_caminho(self):
         inicial = 8
         objetivo = 0
-        result = depth_first_search(self.adjacencias, inicial, objetivo)
-        self.assertEqual(result, [0, 2, 4, 6, 8])
-        
+        result = breadth_first_search(self.adjacencias, inicial, objetivo)
+        self.assertEqual(result, [0, 1, 3, 6, 8])
